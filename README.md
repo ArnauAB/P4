@@ -32,14 +32,32 @@ ejercicios indicados.
 - Analice el script `wav2lp.sh` y explique la misión de los distintos comandos involucrados en el *pipeline*
   principal (`sox`, `$X2X`, `$FRAME`, `$WINDOW` y `$LPC`). Explique el significado de cada una de las 
   opciones empleadas y de sus valores.
+> `sox`: El comando sox sirve para realizar múltiples tareas sobre un fichero de audio, como cambiar su formato, y realizar operaciones de procesado de señal (transformada o reducción de ruido por ejemplo). En nuestro caso, lo usaremos para transformar el fichero WAV raw a un stream de int16.
+>
+> `$X2X`: Programa de SPTK que permite la conversión entre distintos formatos de datos. En nuestro caso, convierte el stream de formato int16 a float32.
+>
+> `$FRAME`: Sirve para dividir la señal en tramas y extraer frame a frame toda una secuencia. En nuestro caso, hemos elegido tramas de longitud 240 (-l 240) y con un periodo de 80 (-p 80).
+>
+> `$WINDOW`: Enventana los datos extraidos anteriormente (mantiene la longitud de 240 muestras), usa la ventana de Hamming por defecto si no se define de otra manera.
+>
+> `$LPC`: Calcula los `-m` coeficientes (orden **$lpc_order**) LPC de cada frame (240 muestras).  
 
 - Explique el procedimiento seguido para obtener un fichero de formato *fmatrix* a partir de los ficheros de
   salida de SPTK (líneas 49 a 55 del script `wav2lp.sh`).
+> Calculamos el numero de columnas según el orden de predicción lineal que usamos (lpc_order+1), y el de filas según las líneas del fichero de salida entre el número de columnas. Luego generamos un archivo con las dimensiones calculadas y luego agregamos los coeficientes LPC calculados anteriormente al archivo.
 
   * ¿Por qué es más conveniente el formato *fmatrix* que el SPTK?
+> Utilizando el formato fmatrix podemos transformar nuestro vector de entrada a matriz, teniendo un rápido acceso a los datos de nuestra señal. Además, su cabecera ofrece información sobre número de tramas y coeficientes calculados.
 
 - Escriba el *pipeline* principal usado para calcular los coeficientes cepstrales de predicción lineal
   (LPCC) en su fichero <code>scripts/wav2lpcc.sh</code>:
+```bash
+sox $inputfile -t raw -e signed -b 16 - |
+$X2X +sf |
+$FRAME -l 240 -p 80 |
+$WINDOW -l 240 -L 240 |
+$LPC -l 240 -m $lpc_order > $base.lp || exit 1
+ ```
 
 - Escriba el *pipeline* principal usado para calcular los coeficientes cepstrales en escala Mel (MFCC) en su
   fichero <code>scripts/wav2mfcc.sh</code>:
