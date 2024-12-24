@@ -56,11 +56,19 @@ ejercicios indicados.
 > $X2X +sf |
 > $FRAME -l 240 -p 80 |
 > $WINDOW -l 240 -L 240 |
-> $LPC -l 240 -m $lpc_order > $base.lp || exit 1
+> $LPC -l 240 -m $lpc_order |
+> $LPCC -m $lpc_order -M $lpcc_order > $base.lpcc || exit 1
 > ```
 
 - Escriba el *pipeline* principal usado para calcular los coeficientes cepstrales en escala Mel (MFCC) en su
   fichero <code>scripts/wav2mfcc.sh</code>:
+> ```bash
+> sox $inputfile -t raw -e signed -b 16 - |
+> $X2X +sf |
+> $FRAME -l 240 -p 80 |
+> $WINDOW -l 240 -L 240 |
+> $MFCC -w 1 -s 8 -l 240 -m $mfcc_order -n $mfcc_banks > $base.mfcc || exit 1
+> ```
 
 ### Extracción de características.
 
