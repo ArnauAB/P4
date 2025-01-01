@@ -25,8 +25,8 @@ float verify(const GMM &gmm_candidate, const fmatrix &dat)
 {
 
 	//TODO: implement verification score based on gmm of the candidate
-	float score = 0.0F;
-
+	/// \FET
+	float score = gmm_candidate.logprob(dat);
 	return score;
 }
 
@@ -39,9 +39,11 @@ float verify(const GMM &gmm_candidate, const GMM & gmm_world, const fmatrix &dat
 	  lprobcand is an informative values to be printed as debug information.
 	  The decision is based on the returned value
 	 */
-	float score = 0.0F;
-	lprobcand = 0.0F;
-	lprobbackground = 0.0F;
+	/// \FET
+	
+	lprobcand = gmm_candidate.logprob(dat);
+	lprobbackground = gmm_world.logprob(dat);
+	float score = lprobcand - lprobbackground;
 
 	return score;
 
@@ -71,8 +73,6 @@ int main(int argc, const char *argv[])
 	#endif
 
 	/*
-	  Toni: I have implemented the reading of arguments for multiple GMM/Features. Read GMMs
-	  But here I will only use the first set of GMM/vectors.
 
 	  You can use data like this ...
 	  <vector<vector<GMM> > mgmm; mgmm.resize(3); mgmm[0] = vgmm;
