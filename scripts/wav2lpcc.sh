@@ -17,8 +17,8 @@ cleanup() {
    \rm -f $base.*
 }
 
-if [[ $# != 3 ]]; then
-   echo "$0 lpc_order input.wav output.lp"
+if [[ $# != 4 ]]; then
+   echo "$0 lpc_order lpcc_order input.wav output.lp"
    exit 1
 fi
 
@@ -55,4 +55,4 @@ nrow=$(($($X2X +fa < $base.lp | wc -l) / ncol))
 
 # Build fmatrix file by placing nrow and ncol in front, and the data after them
 echo $nrow $ncol | $X2X +aI > $outputfile
-cat $base.lp >> $outputfile
+cat $base.lpcc >> $outputfile
