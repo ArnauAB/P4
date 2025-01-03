@@ -77,17 +77,17 @@ ejercicios indicados.
   
   **LP:**  
   
-  ![image](https://github.com/user-attachments/assets/3e3c4808-9f3d-40e8-adfe-d61a6c36e7e3)  
+  ![image](https://github.com/user-attachments/assets/241674e8-a428-4726-8f29-b9a9f266e1e3)
   <br><br>
 
   **LPCC:**  
   
-  ![image](https://github.com/user-attachments/assets/fbe9d3f5-7956-49c7-9631-d6daf0dd6209)  
+  ![image](https://github.com/user-attachments/assets/0a2575ad-c1f0-431b-815f-d49cea12867c)
   <br><br>
     
   **MFCC:**  
   
-  ![image](https://github.com/user-attachments/assets/cd7cc866-5707-4632-b830-1ea70bc40f0f)  
+  ![image](https://github.com/user-attachments/assets/3934a6d0-0bd2-44dc-a188-920f4c01daa8)
   <br><br>
     
 
