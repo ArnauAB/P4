@@ -79,9 +79,11 @@ ejercicios indicados.
   
   ![image](https://github.com/user-attachments/assets/3e3c4808-9f3d-40e8-adfe-d61a6c36e7e3)
 
+
   **LPCC:**  
   
   ![image](https://github.com/user-attachments/assets/fbe9d3f5-7956-49c7-9631-d6daf0dd6209)
+
 
   **MFCC:**  
   
@@ -96,6 +98,7 @@ ejercicios indicados.
     > ![image](https://github.com/user-attachments/assets/8d0c3f22-16d9-420c-abc0-6b86a0f7636d)
     >
     > Finalmente, mostramos por pantalla los diferentes tipos de predicción usando MATLAB:
+    > 
     > ![image](https://github.com/user-attachments/assets/d695217c-eb44-4e77-9c49-acc0dd66c7bd)
 
 
