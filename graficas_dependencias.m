@@ -15,3 +15,4 @@ figure(3);
 plot(graph_mfcc(:,1),graph_mfcc(:,2),'.')
 grid on
 xlabel('a(2)'),ylabel('a(3)'),title('MFCC')
+
