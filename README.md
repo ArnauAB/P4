@@ -154,7 +154,8 @@ ejercicios indicados.
 Complete el código necesario para entrenar modelos GMM.
 
 - Inserte una gráfica que muestre la función de densidad de probabilidad modelada por el GMM de un locutor
-  para sus dos primeros coeficientes de MFCC.
+  para sus dos primeros coeficientes de MFCC.  
+  >![image](https://github.com/user-attachments/assets/2ed7016f-8db6-484b-a2f1-6fd568785cb8)  
 
 - Inserte una gráfica que permita comparar los modelos y poblaciones de dos locutores distintos (la gŕafica
   de la página 20 del enunciado puede servirle de referencia del resultado deseado). Analice la capacidad
