@@ -77,17 +77,19 @@ ejercicios indicados.
   
   **LP:**  
   
-  ![image](https://github.com/user-attachments/assets/3e3c4808-9f3d-40e8-adfe-d61a6c36e7e3)
+  ![image](https://github.com/user-attachments/assets/241674e8-a428-4726-8f29-b9a9f266e1e3)
+  <br><br>
 
   **LPCC:**  
   
-  ![image](https://github.com/user-attachments/assets/fbe9d3f5-7956-49c7-9631-d6daf0dd6209)
-
+  ![image](https://github.com/user-attachments/assets/0a2575ad-c1f0-431b-815f-d49cea12867c)
+  <br><br>
+    
   **MFCC:**  
   
-  ![image](https://github.com/user-attachments/assets/cd7cc866-5707-4632-b830-1ea70bc40f0f)
-
-
+  ![image](https://github.com/user-attachments/assets/3934a6d0-0bd2-44dc-a188-920f4c01daa8)
+  <br><br>
+    
 
   + Indique **todas** las órdenes necesarias para obtener las gráficas a partir de las señales 
     parametrizadas.
@@ -95,9 +97,39 @@ ejercicios indicados.
     > 
     > ![image](https://github.com/user-attachments/assets/8d0c3f22-16d9-420c-abc0-6b86a0f7636d)
     >
-    > Finalmente, mostramos por pantalla los diferentes tipos de predicción usando MATLAB:
-    > ![image](https://github.com/user-attachments/assets/d695217c-eb44-4e77-9c49-acc0dd66c7bd)
-
+    > Finalmente, mostramos por pantalla la correlación de los coeficientes 2 y 3 de los diferentes tipos de predicción usando el siguiente script de Python:
+    >
+    ```
+    import matplotlib.pyplot as plt
+    import numpy as np
+    
+    graph_lp = np.loadtxt('lp.txt')
+    plt.figure(1)
+    plt.plot(graph_lp[:, 0], graph_lp[:, 1], '.')
+    plt.grid(True)
+    plt.xlabel('a(2)')
+    plt.ylabel('a(3)')
+    plt.title('LP')
+    
+    graph_lpcc = np.loadtxt('lpcc.txt')
+    plt.figure(2)
+    plt.plot(graph_lpcc[:, 0], graph_lpcc[:, 1], '.')
+    plt.grid(True)
+    plt.xlabel('a(2)')
+    plt.ylabel('a(3)')
+    plt.title('LPCC')
+    
+    Load and plot mfcc.txt data
+    graph_mfcc = np.loadtxt('mfcc.txt')
+    plt.figure(3)
+    plt.plot(graph_mfcc[:, 0], graph_mfcc[:, 1], '.')
+    plt.grid(True)
+    plt.xlabel('a(2)')
+    plt.ylabel('a(3)')
+    plt.title('MFCC')
+    
+    plt.show()
+    ````
 
   + ¿Cuál de ellas le parece que contiene más información?
     > Cuanto más incorrelados estén los coeficientes, más separados estarán los puntos en las gráficas, esos son los casos que nos proporcionan más información. Podemos deducir entonces mirando las gráficas que la de mfcc y lpcc tendrán significativamente más información que la de lp, debido a que tiene más dependencia, como vemos en su gráfica donde sus puntos se alinean sobre el eje diagonal.  
@@ -115,16 +147,42 @@ ejercicios indicados.
   
 - Según la teoría, ¿qué parámetros considera adecuados para el cálculo de los coeficientes LPCC y MFCC?
 
+> Se suele considerar adecuado escoger alrededor de 13 coeficientes (12-16) para ambos LPCC y MFCC. Para MFCC, además, se suelen usar entre 20-40 filtros en la escala Mel, buscando un equilibrio entre la resolución en esta escala y el coste computacional necesario para ello. 
+
 ### Entrenamiento y visualización de los GMM.
 
 Complete el código necesario para entrenar modelos GMM.
 
 - Inserte una gráfica que muestre la función de densidad de probabilidad modelada por el GMM de un locutor
   para sus dos primeros coeficientes de MFCC.
+  >**Locutor 145:**  
+  >![image](https://github.com/user-attachments/assets/2ed7016f-8db6-484b-a2f1-6fd568785cb8)  
 
 - Inserte una gráfica que permita comparar los modelos y poblaciones de dos locutores distintos (la gŕafica
   de la página 20 del enunciado puede servirle de referencia del resultado deseado). Analice la capacidad
-  del modelado GMM para diferenciar las señales de uno y otro.
+  del modelado GMM para diferenciar las señales de uno y otro.  <br><br>
+  >En nuestro caso, escogemos analizar los modelos y poblaciones de los locutores 145 y 146, para diferenciarlos entre sí los definimos con colores distintos:<br> 
+  ><br>
+  > **Locutor 145:** Rojo  
+  > **Locutor 146:** Azul
+  <br><br>
+  
+  **GMM: 145, POBLACIÓN: 145**  
+  >![image](https://github.com/user-attachments/assets/67c9adab-bd1b-486c-971c-938db75a83b7)
+  <br><br>
+  
+  **GMM: 145, POBLACIÓN: 146**  
+  >![image](https://github.com/user-attachments/assets/d9f4cb24-4561-4d1a-a9fb-dc81ecbbf7da)
+  <br><br>
+  
+  **GMM: 146, POBLACIÓN: 145**  
+  >![image](https://github.com/user-attachments/assets/e419472c-af34-49dc-996f-64f4109e7eaa)
+  <br><br>
+  
+  **GMM: 146, POBLACIÓN: 146**  
+  >![image](https://github.com/user-attachments/assets/44657aa3-2593-4efd-9d0a-728942cd0d49)
+  <br><br>
+
 
 ### Reconocimiento del locutor.
 
