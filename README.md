@@ -98,39 +98,38 @@ ejercicios indicados.
     > ![image](https://github.com/user-attachments/assets/8d0c3f22-16d9-420c-abc0-6b86a0f7636d)
     >
     > Finalmente, mostramos por pantalla la correlación de los coeficientes 2 y 3 de los diferentes tipos de predicción usando el siguiente script de Python:
-    > 
-    >  `import matplotlib.pyplot as plt
-    > import numpy as np
-    > 
-    > Load and plot lp.txt data
-    > graph_lp = np.loadtxt('lp.txt')
-    > plt.figure(1)
-    > plt.plot(graph_lp[:, 0], graph_lp[:, 1], '.')
-    > plt.grid(True)
-    > plt.xlabel('a(2)')
-    > plt.ylabel('a(3)')
-    > plt.title('LP')
-    > 
-    > Load and plot lpcc.txt data
-    > graph_lpcc = np.loadtxt('lpcc.txt')
-    > plt.figure(2)
-    > plt.plot(graph_lpcc[:, 0], graph_lpcc[:, 1], '.')
-    > plt.grid(True)
-    > plt.xlabel('a(2)')
-    > plt.ylabel('a(3)')
-    > plt.title('LPCC')
-    > 
-    > Load and plot mfcc.txt data
-    > graph_mfcc = np.loadtxt('mfcc.txt')
-    > plt.figure(3)
-    > plt.plot(graph_mfcc[:, 0], graph_mfcc[:, 1], '.')
-    > plt.grid(True)
-    > plt.xlabel('a(2)')
-    > plt.ylabel('a(3)')
-    > plt.title('MFCC')
-    > 
-    > plt.show()` 
-
+    >
+    ```
+    import matplotlib.pyplot as plt
+    import numpy as np
+    
+    graph_lp = np.loadtxt('lp.txt')
+    plt.figure(1)
+    plt.plot(graph_lp[:, 0], graph_lp[:, 1], '.')
+    plt.grid(True)
+    plt.xlabel('a(2)')
+    plt.ylabel('a(3)')
+    plt.title('LP')
+    
+    graph_lpcc = np.loadtxt('lpcc.txt')
+    plt.figure(2)
+    plt.plot(graph_lpcc[:, 0], graph_lpcc[:, 1], '.')
+    plt.grid(True)
+    plt.xlabel('a(2)')
+    plt.ylabel('a(3)')
+    plt.title('LPCC')
+    
+    Load and plot mfcc.txt data
+    graph_mfcc = np.loadtxt('mfcc.txt')
+    plt.figure(3)
+    plt.plot(graph_mfcc[:, 0], graph_mfcc[:, 1], '.')
+    plt.grid(True)
+    plt.xlabel('a(2)')
+    plt.ylabel('a(3)')
+    plt.title('MFCC')
+    
+    plt.show()
+    ````
 
   + ¿Cuál de ellas le parece que contiene más información?
     > Cuanto más incorrelados estén los coeficientes, más separados estarán los puntos en las gráficas, esos son los casos que nos proporcionan más información. Podemos deducir entonces mirando las gráficas que la de mfcc y lpcc tendrán significativamente más información que la de lp, debido a que tiene más dependencia, como vemos en su gráfica donde sus puntos se alinean sobre el eje diagonal.  
