@@ -100,35 +100,35 @@ ejercicios indicados.
     > Finalmente, mostramos por pantalla la correlación de los coeficientes 2 y 3 de los diferentes tipos de predicción usando el siguiente script de Python:
     >
     ```
-    >import matplotlib.pyplot as plt
-    >import numpy as np
-    >
-    >graph_lp = np.loadtxt('lp.txt')
-    >plt.figure(1)
-    >plt.plot(graph_lp[:, 0], graph_lp[:, 1], '.')
-    >plt.grid(True)
-    >plt.xlabel('a(2)')
-    >plt.ylabel('a(3)')
-    >plt.title('LP')
-    >
-    >graph_lpcc = np.loadtxt('lpcc.txt')
-    >plt.figure(2)
-    >plt.plot(graph_lpcc[:, 0], graph_lpcc[:, 1], '.')
-    >plt.grid(True)
-    >plt.xlabel('a(2)')
-    >plt.ylabel('a(3)')
-    >plt.title('LPCC')
-    >
-    >Load and plot mfcc.txt data
-    >graph_mfcc = np.loadtxt('mfcc.txt')
-    >plt.figure(3)
-    >plt.plot(graph_mfcc[:, 0], graph_mfcc[:, 1], '.')
-    >plt.grid(True)
-    >plt.xlabel('a(2)')
-    >plt.ylabel('a(3)')
-    >plt.title('MFCC')
-    >
-    >plt.show()
+    import matplotlib.pyplot as plt
+    import numpy as np
+    
+    graph_lp = np.loadtxt('lp.txt')
+    plt.figure(1)
+    plt.plot(graph_lp[:, 0], graph_lp[:, 1], '.')
+    plt.grid(True)
+    plt.xlabel('a(2)')
+    plt.ylabel('a(3)')
+    plt.title('LP')
+    
+    graph_lpcc = np.loadtxt('lpcc.txt')
+    plt.figure(2)
+    plt.plot(graph_lpcc[:, 0], graph_lpcc[:, 1], '.')
+    plt.grid(True)
+    plt.xlabel('a(2)')
+    plt.ylabel('a(3)')
+    plt.title('LPCC')
+    
+    Load and plot mfcc.txt data
+    graph_mfcc = np.loadtxt('mfcc.txt')
+    plt.figure(3)
+    plt.plot(graph_mfcc[:, 0], graph_mfcc[:, 1], '.')
+    plt.grid(True)
+    plt.xlabel('a(2)')
+    plt.ylabel('a(3)')
+    plt.title('MFCC')
+    
+    plt.show()
     ````
 
   + ¿Cuál de ellas le parece que contiene más información?
