@@ -77,17 +77,17 @@ ejercicios indicados.
   
   **LP:**  
   
-  ![image](https://github.com/user-attachments/assets/241674e8-a428-4726-8f29-b9a9f266e1e3)
+  >![image](https://github.com/user-attachments/assets/241674e8-a428-4726-8f29-b9a9f266e1e3)
   <br><br>
 
   **LPCC:**  
   
-  ![image](https://github.com/user-attachments/assets/0a2575ad-c1f0-431b-815f-d49cea12867c)
+  >![image](https://github.com/user-attachments/assets/0a2575ad-c1f0-431b-815f-d49cea12867c)
   <br><br>
     
   **MFCC:**  
   
-  ![image](https://github.com/user-attachments/assets/3934a6d0-0bd2-44dc-a188-920f4c01daa8)
+  >![image](https://github.com/user-attachments/assets/3934a6d0-0bd2-44dc-a188-920f4c01daa8)
   <br><br>
     
 
@@ -155,7 +155,7 @@ Complete el código necesario para entrenar modelos GMM.
 
 - Inserte una gráfica que muestre la función de densidad de probabilidad modelada por el GMM de un locutor
   para sus dos primeros coeficientes de MFCC.
-  >**Locutor 145:**  
+  **Locutor 145:**  
   >![image](https://github.com/user-attachments/assets/2ed7016f-8db6-484b-a2f1-6fd568785cb8)  
 
 - Inserte una gráfica que permita comparar los modelos y poblaciones de dos locutores distintos (la gŕafica
