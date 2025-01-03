@@ -147,7 +147,7 @@ ejercicios indicados.
   
 - Según la teoría, ¿qué parámetros considera adecuados para el cálculo de los coeficientes LPCC y MFCC?
 
-> Se suele considerar adecuado escoger alrededor de 12-16 coeficientes para ambos LPCC y MFCC. Para MFCC, además, se suelen usar entre 20-40 filtros en la escala Mel, buscando un equilibrio entre la resolución en esta escala y el coste computacional necesario para ello. 
+> Se suele considerar adecuado escoger alrededor de 13 coeficientes (12-16) para ambos LPCC y MFCC. Para MFCC, además, se suelen usar entre 20-40 filtros en la escala Mel, buscando un equilibrio entre la resolución en esta escala y el coste computacional necesario para ello. 
 
 ### Entrenamiento y visualización de los GMM.
 
