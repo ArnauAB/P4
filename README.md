@@ -76,12 +76,15 @@ ejercicios indicados.
   para todas las señales de un locutor.
   
   **LP:**  
+  
   ![image](https://github.com/user-attachments/assets/3e3c4808-9f3d-40e8-adfe-d61a6c36e7e3)
 
   **LPCC:**  
+  
   ![image](https://github.com/user-attachments/assets/fbe9d3f5-7956-49c7-9631-d6daf0dd6209)
 
   **MFCC:**  
+  
   ![image](https://github.com/user-attachments/assets/cd7cc866-5707-4632-b830-1ea70bc40f0f)
 
 
@@ -107,6 +110,8 @@ ejercicios indicados.
   | &rho;<sub>x</sub>[2,3] | -0.692576 | -0.170836 | -0.0504945 |
   
   + Compare los resultados de <code>pearson</code> con los obtenidos gráficamente.
+    
+  > Efectivamente comprobamos (analizando los resultados en valor absoluto) que LP es la más incorrelada de los 3 tipos de predicción ya que su valor es el más alto y sus puntos parecían una recta con pendiente negativo, de ahí que su coeficiente de correlación sea negativo. Por otro lado, confirmamos también la baja correlación de los otros dos tipos LPCC y MFCC, viendo numéricamente que MFCC es más incorrelado aún que LPCC.
   
 - Según la teoría, ¿qué parámetros considera adecuados para el cálculo de los coeficientes LPCC y MFCC?
 
