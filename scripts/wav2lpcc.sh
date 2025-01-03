@@ -5,7 +5,7 @@ set -o pipefail
 
 ## \file
 ## \TODO This file implements a very trivial feature extraction; use it as a template for other front ends.
-## 
+## ## \TODO
 ## Please, read SPTK documentation and some papers in order to implement more advanced front ends.
 
 # Base name for temporary files
@@ -18,10 +18,11 @@ cleanup() {
 }
 
 if [[ $# != 4 ]]; then
-   echo "$0 lpc_order lpcc_order input.wav output.lp"
+   echo "$0 lpc_order lpcc_order input.wav output.lpcc"
    exit 1
 fi
 
+# Script arguments
 lpc_order=$1
 lpcc_order=$2
 inputfile=$3
@@ -46,12 +47,12 @@ fi
 
 # Main command for feature extration
 sox $inputfile -t raw -e signed -b 16 - | $X2X +sf | $FRAME -l 240 -p 80 | $WINDOW -l 240 -L 240 |
-	$LPC -l 240 -m $lpc_order > $base.lp | $LPCC -m $lpc_order -M $lpcc_order > $base.lpcc || exit 1
+	$LPC -l 240 -m $lpc_order | $LPCC -m $lpc_order -M $lpcc_order > $base.lpcc || exit 1
    
 
 # Our array files need a header with the number of cols and rows:
-ncol=$((lpc_order + 1)) # lpc p =>  (gain a1 a2 ... ap) 
-nrow=$(($($X2X +fa < $base.lp | wc -l) / ncol))
+ncol=$((lpcc_order+1)) # lpc p =>  (gain a1 a2 ... ap) 
+nrow=`$X2X +fa < $base.lpcc | wc -l | perl -ne 'print $_/'$ncol', "\n";'`
 
 # Build fmatrix file by placing nrow and ncol in front, and the data after them
 echo $nrow $ncol | $X2X +aI > $outputfile

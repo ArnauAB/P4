@@ -56,7 +56,7 @@ class MyFMatrix : public fmatrix
 					if (bFrames)
 						os << '[' << i << "]\t";
 					for (unsigned int j=0; j<ncol(); ++j) {
-						if (j>0) os << "\t";
+						if (j>0) os << '\t';
 						os << (*this)[i][j];
 					}
 					os << '\n';
