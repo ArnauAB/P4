@@ -163,8 +163,8 @@ Complete el código necesario para entrenar modelos GMM.
   del modelado GMM para diferenciar las señales de uno y otro.  <br><br>
   >En nuestro caso, escogemos analizar los modelos y poblaciones de los locutores 145 y 146, para diferenciarlos entre sí los definimos con colores distintos:<br> 
   ><br>
-  > **Locutor 145:** Rojo  
-  > **Locutor 146:** Azul
+  **Locutor 145:** Rojo  
+  **Locutor 146:** Azul
   <br><br>
   
   **GMM: 145, POBLACIÓN: 145**  
