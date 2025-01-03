@@ -75,10 +75,26 @@ ejercicios indicados.
 - Inserte una imagen mostrando la dependencia entre los coeficientes 2 y 3 de las tres parametrizaciones
   para todas las señales de un locutor.
   
+  *LP:*
+  ![image](https://github.com/user-attachments/assets/3e3c4808-9f3d-40e8-adfe-d61a6c36e7e3)
+
+  *lPCC:*
+  ![image](https://github.com/user-attachments/assets/fbe9d3f5-7956-49c7-9631-d6daf0dd6209)
+
+  *MFCC:*
+  ![image](https://github.com/user-attachments/assets/cd7cc866-5707-4632-b830-1ea70bc40f0f)
+
+
+
   + Indique **todas** las órdenes necesarias para obtener las gráficas a partir de las señales 
     parametrizadas.
-    Empezamos ejecutando el programa run_spkid para las 3 parametrizaciones (lp,lpcc,mfcc) y después generamos los ficheros de texto:
-    ![image](https://github.com/user-attachments/assets/8d0c3f22-16d9-420c-abc0-6b86a0f7636d)
+    > Empezamos ejecutando el programa run_spkid para las 3 parametrizaciones (lp,lpcc,mfcc) y después generamos los ficheros de texto:
+    > 
+    > ![image](https://github.com/user-attachments/assets/8d0c3f22-16d9-420c-abc0-6b86a0f7636d)
+    >
+    > Finalmente, mostramos por pantalla los diferentes tipos de predicción usando MATLAB:
+    > ![image](https://github.com/user-attachments/assets/d695217c-eb44-4e77-9c49-acc0dd66c7bd)
+
 
   + ¿Cuál de ellas le parece que contiene más información?
     > Cuanto más incorrelados estén los coeficientes, más separados estarán los puntos en las gráficas, esos son los casos que nos proporcionan más información. Podemos deducir entonces mirando las gráficas que la de mfcc y lpcc tendrán significativamente más información que la de lp, debido a que tiene más dependencia, como vemos en su gráfica donde sus puntos se alinean sobre el eje diagonal.  
