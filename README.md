@@ -192,10 +192,12 @@ Complete el código necesario para entrenar modelos GMM.
 Complete el código necesario para realizar reconociminto del locutor y optimice sus parámetros.
 
 - Inserte una tabla con la tasa de error obtenida en el reconocimiento de los locutores de la base de datos
-  SPEECON usando su mejor sistema de reconocimiento para los parámetros LP, LPCC y MFCC.
+  SPEECON usando su mejor sistema de reconocimiento para los parámetros LP, LPCC y MFCC.<br>
 >   |                        | LP   | LPCC | MFCC |
 >   |------------------------|:----:|:----:|:----:|
->   | Tasa error |10,53%|5,35%|1,78%|
+>   | Tasa error |10,19%|0.38%|1,15%|<br><br>
+> ![image](https://github.com/user-attachments/assets/50124b7c-4ad7-4686-8a9f-a77b0be97e6b)<br><br>
+
 ### Verificación del locutor.
 
 Complete el código necesario para realizar verificación del locutor y optimice sus parámetros.
