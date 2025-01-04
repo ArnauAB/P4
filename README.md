@@ -208,13 +208,15 @@ Complete el código necesario para realizar verificación del locutor y optimice
   de verificación de SPEECON. La tabla debe incluir el umbral óptimo, el número de falsas alarmas y de
   pérdidas, y el score obtenido usando la parametrización que mejor resultado le hubiera dado en la tarea
   de reconocimiento.
+  > Entre las diferentes opciones de datasets que teníamos para  trainnworld (modelo universal de verificación de locutores), hemos decidido escoger la de others.train ya que es la que minimizaba el coste con la parametrización que también nos daba el mejor resultado en la tarea de reconocimiento, en nuestro caso LPCC:  
+  
   > |       | LP   | LPCC | MFCC |
   > |-------|:----:|:----:|:----:|
-  > | score | 49.2 |  10.3 | 10.4 |
+  > | score | 49.2 |  2.0 | 10.4 |
   > 
   > | Sistema | Falsas Alarmas | Pérdidas | Score | Umbral   |
   > |---------|:--------------:|:--------:|:-----:|:--------:|
-  > | LPCC    |         3/1000 |    19/250 |   10.3 | -0.1950964020712 |
+  > | LPCC    |         0/1000 |    5/250 |   2.0 | -0.4527902326452 |
   >
 
 ### Test final
