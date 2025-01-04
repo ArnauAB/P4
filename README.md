@@ -196,7 +196,7 @@ Complete el código necesario para realizar reconociminto del locutor y optimice
   
 >   |                        | LP   | LPCC | MFCC |
 >   |------------------------|:----:|:----:|:----:|
->   | Tasa error |10,19%|0.38%|1,15%|<br><br>
+>   | Tasa error |10.19%|0.38%|1.15%|<br><br>
 >
 > ![image](https://github.com/user-attachments/assets/50124b7c-4ad7-4686-8a9f-a77b0be97e6b)<br><br>
 
