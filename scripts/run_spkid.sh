@@ -81,7 +81,7 @@ compute_lp() {
     shift
     for filename in $(sort $*); do
 		mkdir -p $(dirname $w/$FEAT/$filename.$FEAT)
-        EXEC="wav2lp 8 $db/$filename.wav $w/$FEAT/$filename.$FEAT"
+        EXEC="wav2lp 20 $db/$filename.wav $w/$FEAT/$filename.$FEAT"
         echo $EXEC && $EXEC || exit 1
     done
 }
@@ -90,7 +90,7 @@ compute_lpcc() {
     shift
     for filename in $(sort $*); do
 		mkdir -p $(dirname $w/$FEAT/$filename.$FEAT)
-        EXEC="wav2lpcc 8 20 $db/$filename.wav $w/$FEAT/$filename.$FEAT"
+        EXEC="wav2lpcc 30 30 $db/$filename.wav $w/$FEAT/$filename.$FEAT"
         echo $EXEC && $EXEC || exit 1
     done
 }
@@ -99,7 +99,7 @@ compute_mfcc() {
     shift
     for filename in $(sort $*); do
 		mkdir -p $(dirname $w/$FEAT/$filename.$FEAT)
-        EXEC="wav2mfcc 8 20 $db/$filename.wav $w/$FEAT/$filename.$FEAT"
+        EXEC="wav2mfcc 20 35 $db/$filename.wav $w/$FEAT/$filename.$FEAT"
         echo $EXEC && $EXEC || exit 1
     done
 }
@@ -158,7 +158,7 @@ for cmd in $*; do
        # Implement 'trainworld' in order to get a Universal Background Model for speaker verification
        #
        # - The name of the world model will be used by gmm_verify in the 'verify' command below.
-       EXEC="gmm_train -v 1 -T 0.0001 -N 100 -m 60 -d $w/$FEAT -e $FEAT -g $w/gmm/$FEAT/$world.gmm $lists/verif/$world.train -i 1"
+       EXEC="gmm_train -v 1 -T 0.001 -N 100 -m 60 -d $w/$FEAT -e $FEAT -g $w/gmm/$FEAT/$world.gmm $lists/verif/$world.train -i 1"
         echo $EXEC && $EXEC || exit 1
 
    elif [[ $cmd == verify ]]; then
@@ -171,8 +171,8 @@ for cmd in $*; do
        #   For instance:
        #   * <code> gmm_verify ... > $LOG_VERIF </code>
        #   * <code> gmm_verify ... | tee $LOG_VERIF </code>
-       EXEC="gmm_verify -d $w/$FEAT -D $w/gmm/$FEAT -E gmm $lists/gmm.list $lists/verif/all.test $lists/verif/all.test.candidates"
-        echo $EXEC && $EXEC | tee $LOG_VERIF || exit 1
+       EXEC="gmm_verify -d $w/$FEAT -e $FEAT -D $w/gmm/$FEAT -E gmm -w $world $lists/gmm.list $lists/verif/all.test $lists/verif/all.test.candidates"
+        echo $EXEC && $EXEC | tee $TEMP_VERIF || exit 1
 
    elif [[ $cmd == verifyerr ]]; then
        if [[ ! -s $LOG_VERIF ]] ; then
