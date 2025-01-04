@@ -26,9 +26,10 @@ int classify(const vector<GMM> &vgmm, const fmatrix &dat, float &maxlprob)
 	maxlprob = -1e38;
 
 	//TODO Assign maxind to the best index of vgmm calling 'logprob' for each gmm. Implement this function in gmm.cpp
-	
+	/// \FET
 	for (unsigned int ind=0; ind<vgmm.size();ind++){
-		if (lprob=vgmm[ind].logprob(dat)>maxlprob){
+		lprob=vgmm[ind].logprob(dat);
+		if (lprob>maxlprob){
 		maxlprob = lprob;
 		maxind = ind;
 		}

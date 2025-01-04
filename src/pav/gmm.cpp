@@ -208,6 +208,7 @@ namespace upc
 		fmatrix weights(data.nrow(), nmix);
 		for (iteration=0; iteration<max_it; ++iteration) {
 			/// \TODO
+			/// \FET
 			// Complete the loop in order to perform EM, and implement the stopping criterion.
 			//
 			// EM loop: em_expectation + em_maximization.
@@ -218,6 +219,8 @@ namespace upc
 			this->em_maximization(data,weights);
 			inc_prob = new_prob - old_prob;
 			old_prob = new_prob;
+			if (inc_prob < inc_threshold) 
+				break;
 			if (verbose & 01)
 				cout << "GMM nmix=" << nmix << "\tite=" << iteration << "\tlog(prob)=" << new_prob << "\tinc=" << inc_prob << endl;
 		}
