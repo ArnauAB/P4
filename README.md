@@ -210,10 +210,6 @@ Complete el código necesario para realizar verificación del locutor y optimice
   de reconocimiento.
   > Entre las diferentes opciones de datasets que teníamos para  trainnworld (modelo universal de verificación de locutores), hemos decidido escoger la de others.train ya que es la que minimizaba el coste con la parametrización que también nos daba el mejor resultado en la tarea de reconocimiento, en nuestro caso LPCC:  
   
-  > |       | LP   | LPCC | MFCC |
-  > |-------|:----:|:----:|:----:|
-  > | score | 49.2 |  2.0 | 10.4 |
-  > 
   > | Sistema | Falsas Alarmas | Pérdidas | Score | Umbral   |
   > |---------|:--------------:|:--------:|:-----:|:--------:|
   > | LPCC    |         0/1000 |    5/250 |   2.0 | -0.4527902326452 |
