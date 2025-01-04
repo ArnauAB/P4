@@ -77,17 +77,17 @@ ejercicios indicados.
   
   **LP:**  
   
-  ![image](https://github.com/user-attachments/assets/241674e8-a428-4726-8f29-b9a9f266e1e3)
+  >![image](https://github.com/user-attachments/assets/241674e8-a428-4726-8f29-b9a9f266e1e3)
   <br><br>
 
   **LPCC:**  
   
-  ![image](https://github.com/user-attachments/assets/0a2575ad-c1f0-431b-815f-d49cea12867c)
+  >![image](https://github.com/user-attachments/assets/0a2575ad-c1f0-431b-815f-d49cea12867c)
   <br><br>
     
   **MFCC:**  
   
-  ![image](https://github.com/user-attachments/assets/3934a6d0-0bd2-44dc-a188-920f4c01daa8)
+  >![image](https://github.com/user-attachments/assets/3934a6d0-0bd2-44dc-a188-920f4c01daa8)
   <br><br>
     
 
@@ -154,18 +154,21 @@ ejercicios indicados.
 Complete el código necesario para entrenar modelos GMM.
 
 - Inserte una gráfica que muestre la función de densidad de probabilidad modelada por el GMM de un locutor
-  para sus dos primeros coeficientes de MFCC.
-  >**Locutor 145:**  
+  para sus dos primeros coeficientes de MFCC.  
+  **Locutor 145:**  
   >![image](https://github.com/user-attachments/assets/2ed7016f-8db6-484b-a2f1-6fd568785cb8)  
 
 - Inserte una gráfica que permita comparar los modelos y poblaciones de dos locutores distintos (la gŕafica
   de la página 20 del enunciado puede servirle de referencia del resultado deseado). Analice la capacidad
   del modelado GMM para diferenciar las señales de uno y otro.  <br><br>
-  >En nuestro caso, escogemos analizar los modelos y poblaciones de los locutores 145 y 146, para diferenciarlos entre sí los definimos con colores distintos:<br> 
-  ><br>
-  > **Locutor 145:** Rojo  
-  > **Locutor 146:** Azul
-  <br><br>
+  >En nuestro caso, hemos decidido analizar los modelos y poblaciones de los locutores 145 y 146, para diferenciarlos entre sí los definimos con colores distintos:<br> 
+  
+  
+  **Locutor 145:** Rojo  <br>
+  
+  **Locutor 146:** Azul
+  
+  <br>
   
   **GMM: 145, POBLACIÓN: 145**  
   >![image](https://github.com/user-attachments/assets/67c9adab-bd1b-486c-971c-938db75a83b7)
